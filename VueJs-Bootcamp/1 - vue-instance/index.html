@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/vue@3"></script>
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
@@ -12,7 +13,15 @@
         <h1>{{ title }}</h1>
         <p>{{ content }}</p>
         <a :target="linkInfo.target" :href="linkInfo.url" :alt="linkInfo.alt" :kablosuzkedi="owner">{{ linkInfo.title }}</a>
+        <br>
+        <p>
+            <button @click="changeTitle('Bu 1. buton')">Title Değiştir</button>
+            <button @click="changeTitle('Bu 2.buton')">Title 2 Değiştir</button>
+        </p>
+        <br>
+        <div class="box" @mousemove="updateCoords('Mouse move', $event)" @click="changeTitle('Box üzerinden gelen')"></div>
+        <span>{{ coords.x }} - {{ coords.y }} - {{ coords.msg }}</span>
     </div>
 <script src="app.js"></script>
 </body>
-</html>
+</html> 

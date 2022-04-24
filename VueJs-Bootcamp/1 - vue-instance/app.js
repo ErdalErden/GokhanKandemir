@@ -9,7 +9,24 @@ const app = Vue.createApp({
                 target : "_blank",
                 alt : "Vue JS",           
             },
-            owner : "Poğaça"
+            coords : {
+                x : 0,
+                y : 0,
+                msg: null
+            },
+            owner : "Poğaça",
         };
     },
+    methods : {
+        changeTitle(parametre){
+            this.title = parametre;
+        },
+        updateCoords(message, event){
+            this.coords = {
+                x : event.x,
+                y : event.y,
+                msg : message,
+            }
+        }
+    }
 }).mount("#app");
