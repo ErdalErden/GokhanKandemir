@@ -22,6 +22,7 @@ const app = Vue.createApp({
             this.title = parametre;
         },
         updateCoords(message, event){
+            this.changeTitle(`${event.x}, ${event.y}`)
             this.coords = {
                 x : event.x,
                 y : event.y,
